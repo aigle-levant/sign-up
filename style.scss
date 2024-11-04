@@ -1,0 +1,154 @@
+//fonts
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Press+Start+2P&display=swap');
+
+// variables
+$size: 16px;
+$noto-serif: "Noto Serif", serif;
+//affected by theme change
+:root
+{
+    --white: #F8F8F2;
+    --black: #282A36;
+    --main-color-theme: var(--white);
+    --highlight-text: var(--white);
+    --highlight-bg: var(--black);
+    --text-color: var(--black);
+}
+body.dark-mode
+{
+    --main-color-theme: var(--black);
+    --highlight-text: var(--black);
+    --highlight-bg: var(--white);
+    --text-color: var(--white);
+}
+body.dark-mode .light
+{
+    display: none;
+}
+body.dark-mode .dark
+{
+    display: block;
+}
+
+%flex
+{
+    display: flex;
+    flex-direction: column;
+}
+
+a, a:focus, a:visited, a:hover
+{
+    color: var(--highlight-text);
+    background-color: var(--highlight-bg);
+    padding: 5px;
+    text-decoration: none;
+}
+
+body
+{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: $noto-serif;
+    font-size: $size;
+    display: flex;
+    background-color: var(--main-color-theme);
+    color: var(--text-color);
+}
+.container
+{
+    @extend %flex;
+    flex-direction: row;
+}
+
+//logo
+.logo
+{
+    background-color: var(--main-color-theme);
+    width: 100%;
+    height: 20vh;
+}
+//images
+.image-set
+{
+    position: relative;
+    width: 55vw;
+    height: 90vh;
+    .image
+    {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: opacity 2s ease-in-out;
+        .image.show
+        {
+            opacity: 1;
+        }
+    }
+}
+//attribution
+.attribution
+{
+    padding-top: 5px;
+    background-color: var(--main-color-theme);
+    width: 100%;
+    height: 10vh;
+    text-align: center;
+}
+
+.right
+{
+    @extend %flex;
+    align-items: center;
+    width: 100%;
+    background-color: var(--main-color-theme);
+    .container-one
+    {
+        padding: 8vh;
+        .header
+        {
+            @extend %flex;
+            color: var(--text-color);
+            text-align: justify;
+            font-size: large;
+            font-weight: 550;
+        }
+        .btn
+        {
+            padding: 10px;
+        }
+        .show { display: inline; }
+        .hide { display: none; }
+    }
+    .form
+    {
+        @extend %flex;
+        width: 30vw;
+        label, input
+        {
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+        .required
+        {
+            color: red;
+        }
+        .submit
+        {
+            padding: 15px;
+            font-size: large;
+            margin-top: 10px;
+        }
+    }
+}
+
+.btn
+{
+    color: var(--highlight-text);
+    background-color: var(--highlight-bg);
+}

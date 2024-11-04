@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Press+Start+2P&display=swap");
+:root {
+  --white: #F8F8F2;
+  --black: #282A36;
+  --main-color-theme: var(--white);
+  --highlight-text: var(--white);
+  --highlight-bg: var(--black);
+  --text-color: var(--black);
+}
+
+body.dark-mode {
+  --main-color-theme: var(--black);
+  --highlight-text: var(--black);
+  --highlight-bg: var(--white);
+  --text-color: var(--white);
+}
+
+body.dark-mode .light {
+  display: none;
+}
+
+body.dark-mode .dark {
+  display: block;
+}
+
+.right .form, .right .container-one .header, .right, .container {
+  display: flex;
+  flex-direction: column;
+}
+
+a, a:focus, a:visited, a:hover {
+  color: var(--highlight-text);
+  background-color: var(--highlight-bg);
+  padding: 5px;
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: "Noto Serif", serif;
+  font-size: 16px;
+  display: flex;
+  background-color: var(--main-color-theme);
+  color: var(--text-color);
+}
+
+.container {
+  flex-direction: row;
+}
+
+.logo {
+  background-color: var(--main-color-theme);
+  width: 100%;
+  height: 20vh;
+}
+
+.image-set {
+  position: relative;
+  width: 55vw;
+  height: 90vh;
+}
+.image-set .image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+  transition: opacity 2s ease-in-out;
+}
+.image-set .image .image.show {
+  opacity: 1;
+}
+
+.attribution {
+  padding-top: 5px;
+  background-color: var(--main-color-theme);
+  width: 100%;
+  height: 10vh;
+  text-align: center;
+}
+
+.right {
+  align-items: center;
+  width: 100%;
+  background-color: var(--main-color-theme);
+}
+.right .container-one {
+  padding: 8vh;
+}
+.right .container-one .header {
+  color: var(--text-color);
+  text-align: justify;
+  font-size: large;
+  font-weight: 550;
+}
+.right .container-one .btn {
+  padding: 10px;
+}
+.right .container-one .show {
+  display: inline;
+}
+.right .container-one .hide {
+  display: none;
+}
+.right .form {
+  width: 30vw;
+}
+.right .form label, .right .form input {
+  padding: 5px;
+  margin-bottom: 10px;
+}
+.right .form .required {
+  color: red;
+}
+.right .form .submit {
+  padding: 15px;
+  font-size: large;
+  margin-top: 10px;
+}
+
+.btn {
+  color: var(--highlight-text);
+  background-color: var(--highlight-bg);
+}/*# sourceMappingURL=style.css.map */
